@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import reload from '../assets/reload.png'
 import ConfettiExplosion from 'react-confetti-explosion';
 import Square from './Square'
+import Footer from './Footer';
 
 function TicTacToe() {
     const [squares, setSquares] = useState(new Array(9).fill(null))
@@ -65,9 +66,9 @@ function TicTacToe() {
     }
 
     return (
-        <div className='bg-neutral-50 h-screen w-screen'>
+        <div className='bg-neutral-100 h-screen w-screen m-0'>
             <div className='absolute top-0 left-[50vw]'>{isExploding && <ConfettiExplosion dir={'top'} />}</div>
-            <h1 className='md:text-7xl text-5xl text-center pt-10 font-semibold my-4'>Tic-Tac-Toe <div className='text-lg mt-4'>{"- "+ result&&result}</div></h1>
+            <h1 className='md:text-7xl text-5xl text-center pt-10 font-semibold mb-4'>Tic-Tac-Toe <div className='text-lg mt-4'>{"- "+ result&&result}</div></h1>
             <div className='flex justify-evenly items-center flex-wrap h-4/6 mt-2'>
                 <div className='w-96 h-96 bg-neutral-800 m-1 flex flex-wrap border-2'>
                     {
@@ -117,6 +118,7 @@ function TicTacToe() {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }
